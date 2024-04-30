@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Média</title>
+<style>
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="number"] {
+    width: 100px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Calculadora de Média</h2>
+  <button onclick="calcularMedia()">Calcular Média</button>
+  <br>
+  <span>Nota 1: <input type="number" id="nota1"></span>
+  <br>
+  <span>Nota 2: <input type="number" id="nota2"></span>
+  <br>
+  <span>Média: <span id="media"></span></span>
+  <br>
+  <span>Situação: <span id="situacao"></span></span>
+</div>
+
+<script>
+function calcularMedia() {
+    var nota1 = parseFloat(document.getElementById("nota1").value);
+    var nota2 = parseFloat(document.getElementById("nota2").value);
+  
+    var media = (nota1 + nota2) / 2;
+  
+    document.getElementById("media").innerHTML = media.toFixed(2);
+  
+    var situacao, cor;
+  
+    if (media >= 6) {
+        situacao = "Aprovado";
+        cor = "blue";
+    } else {
+        situacao = "Reprovado";
+        cor = "red";
+    }
+  
+    document.getElementById("situacao").innerHTML = situacao;
+    document.getElementById("situacao").style.color = cor;
+}
+</script>
+</body>
+</html>
 
