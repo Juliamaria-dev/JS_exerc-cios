@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* Estilos para os botões de rádio */
+.radio-container {
+  margin-top: 10px;
+}
 
+.radio-container label {
+  margin-right: 10px;
+}
+
+/* Estilos para os itens da lista */
+li {
+  list-style-type: none;
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.red { background-color: #ff9999; }
+.green { background-color: #99ff99; }
+.blue { background-color: #9999ff; }
+</style>
+</head>
+<body>
+
+<h2>Lista de Compras</h2>
+
+<div>
+  <!-- Input para digitar o texto do item -->
+  <input type="text" id="itemText" placeholder="Digite o item da lista">
+
+  <!-- Botões de rádio para escolher a cor do item -->
+  <div class="radio-container">
+    <label><input type="radio" name="cores" value="red" checked> Vermelho</label>
+    <label><input type="radio" name="cores" value="green"> Verde</label>
+    <label><input type="radio" name="cores" value="blue"> Azul</label>
+  </div>
+
+  <!-- Botão para adicionar o item -->
+  <button id="myBtn">Adicionar Item</button>
+</div>
+
+<!-- Lista de compras -->
+<ul id="myList">
+</ul>
+
+<script>
+// Adicionando evento de clique ao botão
+document.getElementById("myBtn").addEventListener("click", function() {
+  // Obtendo o texto do item
+  var itemText = document.getElementById("itemText").value;
+  // Obtendo a cor selecionada
+  var cor = document.querySelector('input[name="cores"]:checked').value;
+  
+  // Criando um novo elemento de lista
+  var li = document.createElement("li");
+  // Adicionando o texto do item ao elemento de lista
+  li.appendChild(document.createTextNode(itemText));
+  // Adicionando a classe de cor ao elemento de lista
+  li.classList.add(cor);
+  
+  // Adicionando o novo elemento à lista
+  document.getElementById("myList").appendChild(li);
+});
+</script>
+
+</body>
+</html>
