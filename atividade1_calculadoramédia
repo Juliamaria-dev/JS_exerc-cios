@@ -72,7 +72,7 @@ function calcularMedia() {
     }
   
     document.getElementById("situacao").innerHTML = situacao;
-    document.getElementById("situacao").style.color = cor;
+    document.getElementById("situacao").style.color = cor; // Alteração para configurar a cor
 }
 
 function resetarCampos() {
