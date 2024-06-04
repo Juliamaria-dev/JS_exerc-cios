@@ -64,10 +64,10 @@ function calcularMedia() {
     var situacao, cor;
   
     if (media >= 6) {
-        situacao = "Aprovado";
+        situacao = "Aprovado"; // Mudança para cor azul quando aprovado
         cor = "blue";
     } else {
-        situacao = "Reprovado";
+        situacao = "Reprovado"; // Mudança para cor vermelha quando reprovado
         cor = "red";
     }
   
